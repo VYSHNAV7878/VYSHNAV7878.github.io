@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyshnav R. | Developer Portfolio</title>
+    <style>
+        /* Base (Light Mode) Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f9;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 3rem 1rem;
+            transition: background-color 0.3s;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #1abc9c;
+        }
+        .toggle-btn {
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-top: 15px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .toggle-btn:hover {
+            background-color: #16a085;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        h2 {
+            border-bottom: 2px solid #1abc9c;
+            padding-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 2rem;
+        }
+        .skill-tag {
+            background-color: #e0e0e0;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .project-card {
+            background: #fff;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+        .project-card h3 {
+            margin-top: 0;
+            color: #2980b9;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #2c3e50;
+            color: #fff;
+            margin-top: 2rem;
+            transition: background-color 0.3s;
+        }
+        a {
+            color: #1abc9c;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* 🌑 Dark Mode Override Styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        body.dark-mode header {
+            background-color: #1a1a1a;
+            border-bottom: 1px solid #333;
+        }
+        body.dark-mode h2 {
+            color: #1abc9c;
+            border-bottom: 2px solid #333;
+        }
+        body.dark-mode .project-card {
+            background: #1e1e1e;
+            color: #e0e0e0;
+            box-shadow: 0 4px 6px rgba(255,255,255,0.05);
+        }
+        body.dark-mode .project-card h3 {
+            color: #1abc9c;
+        }
+        body.dark-mode .skill-tag {
+            background-color: #333;
+            color: #fff;
+        }
+        body.dark-mode footer {
+            background-color: #1a1a1a;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Vyshnav R.</h1>
+        <p>B.Tech CSE | AI & Full-Stack Developer</p>
+        <button id="darkModeToggle" class="toggle-btn">🌙 Dark Mode</button>
+    </header>
+
+    <div class="container">
+        <h2>About Me</h2>
+        <p>I am a computer science engineer with a strong focus on machine learning, backend infrastructure, and building optimized algorithms. From leading university tech teams to developing real-time prediction models, I love turning complex data into practical, scalable solutions.</p>
+
+        <h2>Technical Arsenal</h2>
+        <div class="skills-grid">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Django & Flask</span>
+            <span class="skill-tag">AWS & Linux</span>
+            <span class="skill-tag">Generative AI</span>
+        </div>
+
+        <h2>Featured Projects</h2>
+        
+        <div class="project-card">
+            <h3>Stroke Detection Model</h3>
+            <p>An advanced machine learning model optimized for high-accuracy predictions, utilizing the Camellema Optimization Algorithm (CLOA) paired with XGBoost.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Command-Line Port Scanner</h3>
+            <p>A fast, lightweight, and efficient networking tool designed to identify open ports and discover services running on target systems. View the code on my GitHub!</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Real-Time Cyber Bullying Classifier</h3>
+            <p>A sophisticated text classification system built to instantly detect and flag toxic language across digital platforms.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Let's connect! Check out my <a href="https://github.com/VYSHNAV7878" target="_blank">GitHub</a>.</p>
+    </footer>
+
+    <script>
+        const toggleButton = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        // Check if the user already chose dark mode in a previous visit
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            toggleButton.textContent = '☀️ Light Mode';
+        }
+
+        // What happens when the button is clicked
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            // Update the button text and save the preference
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                toggleButton.textContent = '☀️ Light Mode';
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                toggleButton.textContent = '🌙 Dark Mode';
+            }
+        });
+    </script>
+</body>
+</html>
